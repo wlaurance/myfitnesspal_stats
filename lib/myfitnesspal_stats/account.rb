@@ -13,8 +13,8 @@ class Account
 
   def login
     # Go to homepage, click log in, and submit the form
-    home_page = @web_crawler.get('http://www.myfitnesspal.com/')
-    login_form = home_page.form_with(id: "fancy_login")
+    home_page = @web_crawler.get('http://www.myfitnesspal.com/account/login')
+    login_form = home_page.form_with(action: "https://www.myfitnesspal.com/account/login")
     login_form['username'] = @username
     login_form['password'] = @password
     current_page = login_form.submit

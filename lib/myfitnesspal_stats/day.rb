@@ -4,7 +4,7 @@ class Day
   def initialize(year, month, day)
     @date = Date.new(year, month, day)
 
-    @login_page = 'http://www.myfitnesspal.com'
+    @login_page = 'https://www.myfitnesspal.com'
 
     @web_crawler = Mechanize.new do |web_crawler|
       web_crawler.cookie_jar.load('cookies.yml')
