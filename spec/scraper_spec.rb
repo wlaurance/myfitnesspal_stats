@@ -1,25 +1,17 @@
 require 'spec_helper'
+require 'date'
 
-describe Scraper, :vcr do 
-  
- describe 'the initialization of a Scraper' do
-    it 'takes a username and password argument successfully' do
-      @scraper = Scraper.new('rspec_test', '123456')
-      expect(@scraper).to be_an_instance_of(Scraper)
-    end
+context Scraper, :vcr do 
+  before(:each) do
+    username = ENV["MFP_USERNAME"] || "rspec_test"
+    password = ENV["MFP_PASSWORD"] || "123456"
+
+    @scraper = Scraper.new username, password
+    @scraper.login
   end
 
-  describe 'the get_nutrition method' do
-    it 'takes a date' do
-
-    end
-
-    it 'does not fail if no date is given' do
-
-    end
-
-    it 'returns a hash with the date and macro totals' do
-
-    end
+  it 'can get data for a specified day' do
+    data = @scraper.get_by_date Date.parse("1-12-2018")
+    puts data
   end
 end
