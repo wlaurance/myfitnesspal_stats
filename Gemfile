@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'mechanize', '~> 2.7.3'
+gem 'mechanize', '~> 2.7.6'
 
 group :devlopment, :test do
   gem 'rspec'
-  gem 'webmock', '~> 1.20.4'
-  gem 'vcr', '~> 2.9.3'
+  gem 'webmock', '~> 3.4.2'
+  gem 'vcr', '~> 3.0.3'
 end
