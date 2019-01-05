@@ -1,4 +1,3 @@
-require_relative 'day'
 require 'mechanize'
 
 class Scraper

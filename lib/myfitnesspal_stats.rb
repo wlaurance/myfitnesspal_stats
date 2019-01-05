@@ -1,7 +1,4 @@
-require_relative 'myfitnesspal_stats/version'
-require_relative 'myfitnesspal_stats/scraper'
-require_relative 'myfitnesspal_stats/day'
-require 'mechanize'
-
-module MyfitnesspalStats   
+module MyfitnesspalStats
+  require_relative 'myfitnesspal_stats/version'
+  require_relative 'myfitnesspal_stats/scraper'
 end
