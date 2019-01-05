@@ -68,8 +68,7 @@ class Scraper
         end
       end
     end
-    res = process contents
-    puts res.to_json
+    process contents
   end
 
   def login
