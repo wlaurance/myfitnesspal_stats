@@ -125,7 +125,9 @@ class Scraper
         nutrient = nutrients[i]
         dish[nutrient[:name].to_sym] = {
           :units => nutrient[:units],
-          :values => c.split().map { |v| v.strip }
+          :values => c.split().map { |v|
+            v.strip.gsub(',', '').to_f
+          }
         }
       }
       m << dish
